@@ -21,15 +21,15 @@
 
 // string
 let myName : string = "chtuhullu"
-myName = 42;
+//myName = 42;
 
 //number
 let myNumber : number = 42;
-myNumber = "chthololol"
+//myNumber = "chthololol"
 
 //boolean
 let myBoolean : boolean = false;
-myBoolean = 1;
+//myBoolean = 1;
 
 //beware any
 let myRealAge; // is type any now
@@ -61,10 +61,49 @@ let address : [string, number, string, number] = ["Street", 99, "Hamburg", 20359
 //enums come s with typescripts with its own keyword
 enum Colors {
     Gray,
-    Green = 100,    // these sets green to 100 and all others to Green + n(order)
+    Green = 100,    // these sets green to 100 and all others to the last = number //  + n(order)
     Blue,
     Red
 }
 
 let myColor : Colors = Colors.Green
 console.log('Enum: myColor', myColor)
+
+//any
+// try to avoid this!!!
+let car : any = 'BMW'
+car = { brand : 'BMW', price : 99}
+console.log(car)
+
+
+
+//---------
+// functions
+function returnMyName(): string {
+    return myName
+}
+console.log(returnMyName())
+
+//void
+function showConsoleVoid() : void {
+    console.log('voidnes')
+    // return myHiddenWish; // tsc's into error cuz void
+}
+showConsoleVoid();
+//  console.log(showConsoleVoid())
+
+//argument types
+function multiply(a: number, b: number): number {
+    return a*b
+}
+//  console.log(multiply(2, 'jan')) // fooled
+console.log(multiply(2,4))
+
+// function types
+let myMultiply : () => void;
+myMultiply = returnMyName
+console.log(myMultiply())
+// this makes TS strong
+let myTypedFunction : (value1: number, value2:  number) => number 
+myTypedFunction = multiply
+console.log(myTypedFunction(2,12))

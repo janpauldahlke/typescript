@@ -16,13 +16,13 @@
 // document.body.appendChild(button);
 // string
 var myName = "chtuhullu";
-myName = 42;
+//myName = 42;
 //number
 var myNumber = 42;
-myNumber = "chthololol";
+//myNumber = "chthololol"
 //boolean
 var myBoolean = false;
-myBoolean = 1;
+//myBoolean = 1;
 //beware any
 var myRealAge; // is type any now
 myRealAge = 42;
@@ -56,3 +56,35 @@ var Colors;
 })(Colors || (Colors = {}));
 var myColor = Colors.Green;
 console.log('Enum: myColor', myColor);
+//any
+// try to avoid this!!!
+var car = 'BMW';
+car = { brand: 'BMW', price: 99 };
+console.log(car);
+//---------
+// functions
+function returnMyName() {
+    return myName;
+}
+console.log(returnMyName());
+//void
+function showConsoleVoid() {
+    console.log('voidnes');
+    // return myHiddenWish; // tsc's into error cuz void
+}
+showConsoleVoid();
+//  console.log(showConsoleVoid())
+//argument types
+function multiply(a, b) {
+    return a * b;
+}
+//  console.log(multiply(2, 'jan')) // fooled
+console.log(multiply(2, 4));
+// function types
+var myMultiply;
+myMultiply = returnMyName;
+console.log(myMultiply());
+// this makes TS strong
+var myTypedFunction;
+myTypedFunction = multiply;
+console.log(myTypedFunction(2, 12));
