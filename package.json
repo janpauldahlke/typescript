@@ -1,0 +1,23 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "> doing stuff with tsc",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server --config config/bs-config.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/janpauldahlke/typescript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/janpauldahlke/typescript/issues"
+  },
+  "homepage": "https://github.com/janpauldahlke/typescript#readme",
+  "devDependencies": {
+    "lite-server": "^2.4.0"
+  }
+}
