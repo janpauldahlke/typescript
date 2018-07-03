@@ -1,6 +1,7 @@
 # typescript
 
 > doing stuff with tsc
-> fixing lite-server
-> ```browser: argv.browser || "default"```add this line to `lite-server.js`options object
-> ```browser: options.browser```add this line to sync.init()
+> make sure tss is installed -g, then type `tsc -watch script.ts` to activate watcher on script.ts
+> run project with `npm run start`, but care, lite-server wants to open chrome
+> reconfigure this to your browser if needed, RTFM lite-server config
+> 
