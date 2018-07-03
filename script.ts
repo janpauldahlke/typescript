@@ -1,3 +1,5 @@
+import { complex } from "./types";
+
 // from the playgrounf typescriptlang.org
 
 // function Greeter(greeting: string) {
@@ -107,3 +109,97 @@ console.log(myMultiply())
 let myTypedFunction : (value1: number, value2:  number) => number 
 myTypedFunction = multiply
 console.log(myTypedFunction(2,12))
+
+//objects
+let userData = {
+    name: 'chtulu',
+    age: 21
+}
+userData = {
+  name: 'foo',
+  age: 42  
+} //TS already infered the object
+console.log(userData)
+
+//explicit now
+let User: {name: String, age: Number, driversLicense: Boolean} = {
+    name: 'Chtulu',
+    age: 42,
+    driversLicense: false
+}
+console.log(User)
+
+//declaring types
+declare type UserObject = {
+    name: String,
+    age: Number,
+    driversLicense: Boolean
+}
+//setting types on variables
+let Jan : UserObject = {
+    name: 'Jan',
+    age: 42,
+    driversLicense: true
+}
+//consumption
+console.log(Jan)
+
+//complex object an example
+let complex : {data: number[], output : ( all : boolean ) => number } = {
+    data : [100,200,300,400],
+    output : function(all: boolean) : number {
+        if(all){
+            const reducer = (accumulator: number, currentValue: number) : number => accumulator + currentValue
+            return this.data.reduce(reducer)
+        }
+        else {
+            return 0
+        }
+    }
+}
+console.log(complex.output(false))
+
+//testing imported types. but hacked the browser cuz common.js
+let complex2 : complex = {
+    data: [1,2,3,4],
+    output: function(all: boolean) : number {
+        if(all){
+            return this.data.reduce(((acc: number, val: number) => acc+val))
+        }
+        else {
+            return 0
+        }
+    }
+}
+
+console.log(complex2.output(true))
+
+//union types
+// to be able to let myRealAge = 27 || "27" one needs let myRealAge : any but this is silly right?
+//a real world type
+let myRealAge2 : number | string = 27 // || '27'
+//myRealAge2 = true // a TSC error
+
+
+//check types
+let finalValue = 42
+if (typeof finalValue !== "string") {
+    console.log('finalValue needs to be a string')
+}
+
+type simpleOne = {
+    count: number,
+    output: () => void 
+}
+
+let simpler : simpleOne = {
+    count: 10,
+    output: function(){ 
+        console.log(this.count)
+    }
+}
+// this needs more reseach
+// a guess. TS wants classes here to be an instanceof
+// if(simpler instanceof type.simpleOne){
+
+// }
