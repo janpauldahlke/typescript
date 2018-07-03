@@ -203,3 +203,26 @@ let simpler : simpleOne = {
 // if(simpler instanceof type.simpleOne){
 
 // }
+
+//coming with TS 2.0
+//never type
+//it never returns anything,  void is returned void so do not be confused aboutthe absence of beeing isnt void
+
+function neverReturns(): never {
+    throw new Error('Never an Error')
+}
+
+//nullable types
+// check the options in tsconfig
+// "strictNullChecks": true, was commented out
+// with this active the TSC throws errors
+//let canBeNull = 24;
+// keep in mind, NULL is its own type
+let canBeNull : number | null = 24
+canBeNull = null // with this active the TSC throws errors
+let canAlsoBeNull
+console.log(canBeNull) //null
+console.log(canAlsoBeNull) //undefined
+//nonnullable is working even with unionntypes as arguments
+let cannotBeNull : NonNullable<number | string> = 'string12'
+console.log(cannotBeNull)

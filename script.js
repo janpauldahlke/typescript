@@ -1,5 +1,5 @@
 "use strict";
-exports.__esModule = true;
+Object.defineProperty(exports, "__esModule", { value: true });
 // from the playgrounf typescriptlang.org
 // function Greeter(greeting: string) {
 //     this.greeting = greeting;
@@ -162,3 +162,23 @@ var simpler = {
 // a guess. TS wants classes here to be an instanceof
 // if(simpler instanceof type.simpleOne){
 // }
+//coming with TS 2.0
+//never type
+//it never returns anything,  void is returned void so do not be confused aboutthe absence of beeing isnt void
+function neverReturns() {
+    throw new Error('Never an Error');
+}
+//nullable types
+// check the options in tsconfig
+// "strictNullChecks": true, was commented out
+// with this active the TSC throws errors
+//let canBeNull = 24;
+// keep in mind, NULL is its own type
+var canBeNull = 24;
+canBeNull = null; // with this active the TSC throws errors
+var canAlsoBeNull;
+console.log(canBeNull); //null
+console.log(canAlsoBeNull); //undefined
+//nonnullable is working even with unionntypes as arguments
+var cannotBeNull = 'string12';
+console.log(cannotBeNull);
