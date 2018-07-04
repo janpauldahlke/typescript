@@ -18,3 +18,4 @@ mySelf.bankAccount.deposit(3000);
 console.log(mySelf.bankAccount.money);
 mySelf.bankAccount.withdraw(100);
 console.log(mySelf.bankAccount.money);
+//# sourceMappingURL=exercise.js.map

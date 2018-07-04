@@ -182,3 +182,4 @@ console.log(canAlsoBeNull); //undefined
 //nonnullable is working even with unionntypes as arguments
 var cannotBeNull = 'string12';
 console.log(cannotBeNull);
+//# sourceMappingURL=script.js.map
