@@ -70,5 +70,6 @@
     "es6_support.ts",
     "exercise2.ts",
     "classes.ts",
+    "exercise3.ts",
   ]
 }

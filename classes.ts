@@ -63,7 +63,7 @@ class Student extends Person {
   }
 }
 
-const student1 = new Student()   // TSC errors here, it wants fresh arguembts
+const student1 = new Student(/*prevent me an error*/'aa')   // TSC errors here, it wants fresh arguembts
 const student2 = new Student('providesAName')
 console.log(student1)
 console.log(student2) // but this name will be still overwritten from inside the student class!
@@ -192,7 +192,7 @@ const right = OnlyOne.getInstance()
 
 //  the READONLY properties
 console.log(right.name)
-right.name = 'YOUR NAME IS HACKED' // readONLY will prevent such hacks nice and steady
+//right.name = 'YOUR NAME IS HACKED' // readONLY will prevent such hacks nice and steady
 console.log(right.name) // badass
 // make it readonly by --> private constructor(public readonly name: string) {} in line 175
 
