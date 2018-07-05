@@ -49,10 +49,11 @@ console.log('____', paul);
 // inheritance
 var Student = /** @class */ (function (_super) {
     __extends(Student, _super);
-    function Student() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.firstName = 'StudentClassName';
-        return _this;
+    //firstName = 'StudentClassName' // this makes student1 console.log = undefined
+    function Student(name) {
+        // needs to be called to call parent class
+        return _super.call(this, name) || this;
+        //console.log(this.type) because type is private!
     }
     return Student;
 }(Person));
@@ -60,4 +61,55 @@ var student1 = new Student(); // TSC errors here, it wants fresh arguembts
 var student2 = new Student('providesAName');
 console.log(student1);
 console.log(student2); // but this name will be still overwritten from inside the student class!
+student1.setAge(122);
+student1.setType('FOOTYPE'); // this is private and shouldnt work
+console.log(student1);
+//setters and getters 
+// the old way
+var Animal = /** @class */ (function () {
+    function Animal() {
+        this.SpeciesError = function () {
+            throw Error('Make sure your species is long enough');
+        };
+    }
+    Animal.prototype.setSpecies = function (value) {
+        value.length > 4 ? this._species = value : this.SpeciesError();
+    };
+    Animal.prototype.getSpecies = function () {
+        return this._species;
+    };
+    return Animal;
+}());
+try {
+    var Ape = new Animal();
+    Ape.setSpecies('Ape');
+}
+catch (error) {
+    console.log(error);
+}
+var Nautilus = new Animal();
+Nautilus.setSpecies('Nautilus');
+console.log(Nautilus.getSpecies);
+var Plant = /** @class */ (function () {
+    function Plant() {
+    }
+    Object.defineProperty(Plant.prototype, "species", {
+        get: function () {
+            return this._species;
+        },
+        //nice and handy reminds onto vue setter getter!
+        set: function (value) {
+            value.length > 3 ? this._species = value : this._species = 'DEFAULT';
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return Plant;
+}());
+var dontTouch = new Plant();
+console.log('plant1', dontTouch.species);
+dontTouch.species = 'NO';
+console.log('plant2', dontTouch.species);
+dontTouch.species = 'MIMOSA PUDICA';
+console.log(dontTouch.species);
 //# sourceMappingURL=classes.js.map
