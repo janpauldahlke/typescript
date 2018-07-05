@@ -12,7 +12,7 @@ beAnything = 24;
 //TS 2.0
 // no unUsedParameter = true
 // strictNullCheck, else on result would be implicit null because no assign
-function controlMe(isTrue: boolean, somethingElse: boolean) {
+function controlMe(isTrue: boolean /*, somethingElse: boolean */) {
   let result : number;
-  return isTrue ? result = 12 : result // not workking on TSC 2.0
+  return isTrue ? result = 12 : result = 11 // result only is not workking on TSC 2.0
 }

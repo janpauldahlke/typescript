@@ -67,5 +67,7 @@
     "script.ts",
     "exercise.ts",
     "compilercheck.ts",
+    "es6_support.ts",
+    "exercise2.ts",
   ]
 }
