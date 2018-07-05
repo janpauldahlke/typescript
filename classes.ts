@@ -117,3 +117,82 @@ dontTouch.species = 'NO'
 console.log('plant2', dontTouch.species)
 dontTouch.species = 'MIMOSA PUDICA'
 console.log(dontTouch.species)
+
+// about STATIC
+class Helpers {
+  static PI : number = 3.1415
+  static calculateCircum(diameter: number): number{
+    return diameter * this.PI
+  }
+  static calculateArea(diameter: number) : number{
+    return Math.pow((diameter/2), 2) * this.PI
+  }
+}
+
+// statics to call
+console.log(Helpers.PI * 3)
+console.log(Helpers.calculateArea(5))
+console.log(Helpers.calculateCircum(8))
+
+
+//abstract classes
+// they can be only inheriated
+// can provide basic setup
+abstract class Movie{
+  movieTitle: string = 'SOMEDEFAULT';
+  budget: number = 100;
+
+
+  // in the child class one NEEDS to implement a method named changeTitle
+  abstract changeTitle(name: string) : void; 
+
+  calculateBudget(exchange: number) : void {
+    this.budget =  exchange * this.budget
+  }
+}
+
+class SciFyMovie extends Movie{
+  constructor() {
+    super()
+  }
+
+  changeTitle(newTitle: string) : void {
+    this.movieTitle = newTitle
+  }
+}
+const Interstellar = new SciFyMovie();
+console.log(Interstellar)
+Interstellar.changeTitle('INTERSTELLAR')
+Interstellar.calculateBudget(1.14)
+console.log(Interstellar)
+
+//  private constructors
+//  use this to singleton class
+//  this provides only one instance during runtime
+class OnlyOne{
+  private static instance : OnlyOne;
+  // public readonly name : string;
+  private constructor(public readonly name: string) {
+    // line 174 would need this
+    //this.name = name
+  }
+
+
+  static getInstance(){
+    if(!OnlyOne.instance){
+      // so this pattern ensures us, that there can be no other instances created from outside
+      OnlyOne.instance = new OnlyOne('THERE CAN BE ONLY ONE')
+    } 
+    return OnlyOne.instance;
+  }
+}
+
+//const wrong = new OnlyOne('THE ONLY ONE? NOPE'); // not working
+const right = OnlyOne.getInstance()
+
+//  the READONLY properties
+console.log(right.name)
+right.name = 'YOUR NAME IS HACKED' // readONLY will prevent such hacks nice and steady
+console.log(right.name) // badass
+// make it readonly by --> private constructor(public readonly name: string) {} in line 175
+

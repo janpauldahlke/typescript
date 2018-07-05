@@ -112,4 +112,75 @@ dontTouch.species = 'NO';
 console.log('plant2', dontTouch.species);
 dontTouch.species = 'MIMOSA PUDICA';
 console.log(dontTouch.species);
+// about STATIC
+var Helpers = /** @class */ (function () {
+    function Helpers() {
+    }
+    Helpers.calculateCircum = function (diameter) {
+        return diameter * this.PI;
+    };
+    Helpers.calculateArea = function (diameter) {
+        return Math.pow((diameter / 2), 2) * this.PI;
+    };
+    Helpers.PI = 3.1415;
+    return Helpers;
+}());
+// statics to call
+console.log(Helpers.PI * 3);
+console.log(Helpers.calculateArea(5));
+console.log(Helpers.calculateCircum(8));
+//abstract classes
+// they can be only inheriated
+// can provide basic setup
+var Movie = /** @class */ (function () {
+    function Movie() {
+        this.movieTitle = 'SOMEDEFAULT';
+        this.budget = 100;
+    }
+    Movie.prototype.calculateBudget = function (exchange) {
+        this.budget = exchange * this.budget;
+    };
+    return Movie;
+}());
+var SciFyMovie = /** @class */ (function (_super) {
+    __extends(SciFyMovie, _super);
+    function SciFyMovie() {
+        return _super.call(this) || this;
+    }
+    SciFyMovie.prototype.changeTitle = function (newTitle) {
+        this.movieTitle = newTitle;
+    };
+    return SciFyMovie;
+}(Movie));
+var Interstellar = new SciFyMovie();
+console.log(Interstellar);
+Interstellar.changeTitle('INTERSTELLAR');
+Interstellar.calculateBudget(1.14);
+console.log(Interstellar);
+//  private constructors
+//  use this to singleton class
+//  this provides only one instance during runtime
+var OnlyOne = /** @class */ (function () {
+    // public readonly name : string;
+    function OnlyOne(name) {
+        this.name = name;
+        // line 174 would need this
+        //this.name = name
+    }
+    OnlyOne.getInstance = function () {
+        if (!OnlyOne.instance) {
+            // so this pattern ensures us, that there can be no other instances created from outside
+            OnlyOne.instance = new OnlyOne('THERE CAN BE ONLY ONE');
+        }
+        return OnlyOne.instance;
+    };
+    return OnlyOne;
+}());
+//const wrong = new OnlyOne('THE ONLY ONE? NOPE'); // not working
+var right = OnlyOne.getInstance();
+//  the READONLY properties
+console.log(right.name);
+right.name = 'YOUR NAME IS HACKED'; // readONLY will prevent such hacks nice and steady
+console.log(right.name); // badass
+// make it readonly by --> private constructor(public readonly name: string) {} in line 175
 //# sourceMappingURL=classes.js.map
