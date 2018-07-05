@@ -51,3 +51,14 @@ paul.printAge()
 paul.setType('superUser')
 console.log(paul.printType())
 console.log('____', paul)
+
+
+// inheritance
+class Student extends Person {
+  firstName = 'StudentClassName'
+}
+
+const student1 = new Student()   // TSC errors here, it wants fresh arguembts
+const student2 = new Student('providesAName')
+console.log(student1)
+console.log(student2) // but this name will be still overwritten from inside the student class!
