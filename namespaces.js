@@ -32,5 +32,6 @@
 // its beatiful isnt it?
 /// <reference path="mathFoo/calcRectMath.ts"/>
 /// <reference path="mathFoo/calcWorldMath.ts"/>
+// but one still needs to specify the outFile here
 console.log(myMathNamespace.calcRect(10, 4));
 console.log(myMathNamespace.calcWorld(5));
