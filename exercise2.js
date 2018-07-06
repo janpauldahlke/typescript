@@ -56,4 +56,3 @@ var scientist = { firstName: "Will", experience: 12 };
 // var experience = scientist.experience;
 var firstName = scientist.firstName, experience = scientist.experience;
 console.log(firstName, experience);
-//# sourceMappingURL=exercise2.js.map

@@ -55,4 +55,3 @@ var UserBlog = {
 //on destructering the desctructred type has to be of the type of the object
 var author = UserBlog.author;
 console.log(author);
-//# sourceMappingURL=es6_support.js.map

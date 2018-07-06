@@ -46,7 +46,7 @@ var __extends = (this && this.__extends) || (function () {
 //   get: function () {
 //       return this._firstName;
 //   },
-//   set: function (value) {
+//   set: function (value) {chrom
 //       if (value.length > 3) {
 //           this._firstName = value;
 //       }
@@ -141,4 +141,3 @@ pawl.firstName = 'pl';
 console.log(pawl.firstName);
 pawl.firstName = 'pawl';
 console.log(pawl.firstName);
-//# sourceMappingURL=exercise3.js.map

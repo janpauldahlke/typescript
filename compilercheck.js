@@ -14,4 +14,3 @@ function controlMe(isTrue /*, somethingElse: boolean */) {
     var result;
     return isTrue ? result = 12 : result = 11; // result only is not workking on TSC 2.0
 }
-//# sourceMappingURL=compilercheck.js.map

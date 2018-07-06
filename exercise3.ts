@@ -40,7 +40,7 @@
 //   get: function () {
 //       return this._firstName;
 //   },
-//   set: function (value) {
+//   set: function (value) {chrom
 //       if (value.length > 3) {
 //           this._firstName = value;
 //       }

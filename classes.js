@@ -183,4 +183,3 @@ console.log(right.name);
 //right.name = 'YOUR NAME IS HACKED' // readONLY will prevent such hacks nice and steady
 console.log(right.name); // badass
 // make it readonly by --> private constructor(public readonly name: string) {} in line 175
-//# sourceMappingURL=classes.js.map
