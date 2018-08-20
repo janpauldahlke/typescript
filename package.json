@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "lite-server --config config/bs-config.json",
-    "compileTS" : "tsc --watch"
+    "compileTS": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,8 @@
   "homepage": "https://github.com/janpauldahlke/typescript#readme",
   "devDependencies": {
     "lite-server": "^2.4.0"
+  },
+  "dependencies": {
+    "systemjs": "^0.21.4"
   }
 }

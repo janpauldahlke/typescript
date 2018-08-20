@@ -33,5 +33,7 @@
 /// <reference path="mathFoo/calcRectMath.ts"/>
 /// <reference path="mathFoo/calcWorldMath.ts"/>
 // but one still needs to specify the outFile here
+// but as it turns out this is not working, there must be another way!!
+// https://stackoverflow.com/questions/35963346/only-amd-and-system-modules-are-supported-alongside-out
 console.log(myMathNamespace.calcRect(10, 4));
 console.log(myMathNamespace.calcWorld(5));

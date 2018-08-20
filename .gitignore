@@ -1,1 +1,2 @@
 node_modules/**
+# do not check in visualstudio stuff

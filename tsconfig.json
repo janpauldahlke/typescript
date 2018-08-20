@@ -74,5 +74,8 @@
     "namespaces.ts",
     "mathFoo/calcWorldMath.ts",
     "mathFoo/calcRectMath.ts",
+    "MathModule/circle.ts",
+    "MathModule/rectangle.ts",
+    "moduleSystem.ts",
   ]
 }
