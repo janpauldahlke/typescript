@@ -55,3 +55,13 @@ console.log(myNewMap.getItem('Milk'));
 myNewMap.printMap();
 myNewMap.clear();
 myNewMap.printMap();
+// make T into number
+var numberMap = new MyMap();
+numberMap.setItem("1", 19);
+numberMap.setItem("2", 18);
+numberMap.printMap();
+//ez from here: string
+var stringMap = new MyMap();
+stringMap.setItem("1", "OnkelOtto");
+stringMap.setItem("2", "HansMeiser");
+stringMap.setItem("3", 12); // error goes here

@@ -58,3 +58,14 @@ myNewMap.printMap();
 myNewMap.clear();
 myNewMap.printMap();
 
+// make T into number
+const numberMap = new MyMap<number>();
+numberMap.setItem("1", 19);
+numberMap.setItem("2", 18);
+numberMap.printMap()
+
+//ez from here: string
+const stringMap = new MyMap<string>();
+stringMap.setItem("1", "OnkelOtto")
+stringMap.setItem("2", "HansMeiser");
+stringMap.setItem("3", 12 as string) // error goes here
