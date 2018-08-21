@@ -64,6 +64,9 @@
     "node_modules",
   ],
   "files": [
+
+    // this approach pollutes my namespaces
+    // if one uses a variable or const in one file it is considered a redeclaration if one uses it in another file
    "script.ts",
     "exercise.ts",
     "compilercheck.ts",
@@ -77,5 +80,6 @@
     "MathModule/circle.ts",
     "MathModule/rectangle.ts",
     "moduleSystem.ts",
+    "interfaces1.ts"
   ]
 }
