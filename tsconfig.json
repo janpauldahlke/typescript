@@ -80,6 +80,7 @@
     "MathModule/circle.ts",
     "MathModule/rectangle.ts",
     "moduleSystem.ts",
-    "interfaces1.ts"
+    "interfaces1.ts",
+    "generics.ts"
   ]
 }
