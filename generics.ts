@@ -73,14 +73,14 @@ myBetterSimpleMath.baseValue = 10;
 myBetterSimpleMath.multiplyValue = 50;
 console.log(myBetterSimpleMath.calculate())
 
-class evenBetterSimpleMath<T extends number | string> { //constrain the generic
+class evenBetterSimpleMath<T extends string | number, U extends number | string> { //constrain the generic // by convention T is one Type U are more then one // but it could be anything, its a convention ;-)
   baseValue: T;
-  multiplyValue: T;
+  multiplyValue: U;
   calc() : number {
     return +this.baseValue * +this.multiplyValue; // is this equivalent to parseInt()?
   }
 }
-const myEvenBetterMath = new evenBetterSimpleMath</*number | */string>(); // consume the generic here and be constrain the distinct type of the class this way one could have eiter string or number based classes
-myEvenBetterMath.baseValue = "100";
+const myEvenBetterMath = new evenBetterSimpleMath</*number | */number, string>(); // consume the generic here and be constrain the distinct type of the class this way one could have eiter string or number based classes
+myEvenBetterMath.baseValue = 100;
 myEvenBetterMath.multiplyValue = "50";
 console.log(myEvenBetterMath.calc())

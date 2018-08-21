@@ -73,6 +73,6 @@ var evenBetterSimpleMath = /** @class */ (function () {
     return evenBetterSimpleMath;
 }());
 var myEvenBetterMath = new evenBetterSimpleMath(); // consume the generic here and be constrain the distinct type of the class this way one could have eiter string or number based classes
-myEvenBetterMath.baseValue = "100";
+myEvenBetterMath.baseValue = 100;
 myEvenBetterMath.multiplyValue = "50";
 console.log(myEvenBetterMath.calc());

@@ -81,6 +81,7 @@
     "MathModule/rectangle.ts",
     "moduleSystem.ts",
     "interfaces1.ts",
-    "generics.ts"
+    "generics.ts",
+    "excersise4.ts"
   ]
 }
