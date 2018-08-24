@@ -64,5 +64,5 @@ numberMap.printMap();
 var stringMap = new MyMap();
 stringMap.setItem("1", "OnkelOtto");
 stringMap.setItem("2", "HansMeiser");
-stringMap.setItem("3", 12); // error goes here // althoug it has a TS compile error it will compile and run and show / 3 12, unhappy a out this, but like its said, TSC is a different level then JS
+stringMap.setItem("3", 12 + ""); // error goes here if no sring concatenation // althoug it has a TS compile error it will compile and run and show / 3 12, unhappy a out this, but like its said, TSC is a different level then JS
 stringMap.printMap();
