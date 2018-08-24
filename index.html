@@ -11,6 +11,8 @@
   <div class="container">
 
   </div>
+
+  <div id="app" style="border: 1px solid red">change this with jquery</div>
   <!-- consider this a commonjs in the browser hack!-->
   <!-- https://stackoverflow.com/questions/43042889/typescript-referenceerror-exports-is-not-defined/46887516#46887516 -->
   <!--we dont need this anymore due systemjs
@@ -29,6 +31,9 @@
   <script src="/node_modules/systemjs/dist/system.js"></script>
   <script>
     SystemJS.config({
+      map : {
+        "jQuery" : "./node_modules/jquery/dist/jquery.min.js"
+      },
       baseURL: '/',
       packages: {
         '/': {
@@ -40,7 +45,8 @@
     //SystemJS.import('interfaces1.js');
     //SystemJS.import('generics.js');
     //SystemJS.import('excersise4.js');
-    SystemJS.import('decorators.js');
+    //SystemJS.import('decorators.js');
+    SystemJS.import('externalLibs.js');
   </script>
 </body>
 </html>
